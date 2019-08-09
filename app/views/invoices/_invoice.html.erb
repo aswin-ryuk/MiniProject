@@ -1,0 +1,11 @@
+<tr>
+    <td><%= link_to invoice.reference, 'javascript:void(0);', data: { title: 'Invoice Details', url: invoice_details_invoices_path(id: invoice.id)}, class: "js_load_modal_popup" %></td>
+    <td><%= invoice.invoice_date %></td>
+    <td><%= link_to invoice.customer_name, edit_invoice_path(invoice) %></td>
+    <td><%= invoice.brand_manager %></td>
+    <td><%= invoice.narration %></td>
+    <td><%= invoice.amount %></td>
+    <td><%= total_collection(invoice) %></td>
+    <td><%= balance_due(invoice) %></td>
+    <td><%= link_to "Add Collection", 'javascript:void(0);', data: { title: 'Add Collection amount', url: add_collection_invoices_path(id: invoice.id)}, class: "btn btn-primary js_load_modal_popup #{balance_due(invoice) == 0.0 ? 'disabled' : ''} #{is_valid_invoice?}" %></td>
+</tr>

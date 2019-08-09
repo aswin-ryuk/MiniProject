@@ -1,0 +1,19 @@
+<% path = (defined?(path) and !path.nil?) ? path : '' %>
+
+<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle pull-right" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <span class='icon-refresh'></span>
+   <!--  <%# if session[:filter_type].present? %>
+      <span class="js_dropdown_txt"><%= session[:filter_type] %></span>
+    <%#else%> --> 
+      <span class="js_dropdown_txt">Filter</span>
+    <%#end%>
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" data-url="<%= path %>">
+    <li class='align-left'><a href="#" class="js_btn_filter" data-value="all"><i class='icon-font'></i>&nbsp;All</a></li>
+    <li class='align-left'><a href="#" class="js_btn_filter" data-value="active"><i class="icon-ok"></i>&nbsp;Active</a></li>
+    <li class='align-left'><a href="#" class="js_btn_filter" data-value="inactive"><i class="icon-ok"></i>&nbsp;Inactive</a></li>
+  </ul>
+</div>
+<%#= hidden_field_tag('filter_type', @filter_type) %>

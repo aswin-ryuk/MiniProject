@@ -1,0 +1,30 @@
+<strong><%= invoice.reference %></strong><br>
+<strong><%= invoice.customer_name %></strong><br>
+<strong><%= invoice.brand_manager %></strong><br>
+<strong><%= invoice.narration %></strong><br><br>
+
+<table class="table table-bordered table-hover table-condensed custom-table">
+<thead >
+  <th>Date</th>
+  <th>Event</th>
+  <th>Amount</th>
+</thead>  
+<tbody>
+	<tr>
+		<td><%= invoice.invoice_date %></td>
+		<td>New /invoice</td>
+		<td><%= invoice.amount %></td>
+	<tr>
+	<%  collections.each do |collection| %>
+	<tr>
+		<td><%= collection.collection_date %></td>
+		<td> Collection</td>
+		<td><%= collection.amount.abs %></td>
+	</tr>
+	<%end%>
+	<tr>
+	    <td colspan="2" style="text-align: right;">Balance</td>
+	    <td><%= balance_due(invoice) %> </td>
+	</tr>
+</tbody>
+</table>

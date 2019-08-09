@@ -1,0 +1,7 @@
+<tr id="sorting_ids_<%=course.id%>">
+    <td class="drag"><%=link_to course.name, edit_course_path(course) %></td>
+    <td class="drag"><%= course.description %></td>
+    <td class=""><%= link_to(image_tag( course.active == 'Y' ? "accept" : "reject", 
+	{alt: "", align: "middle", border: "0", size: "20x20" }) + "", 'javascript:void(0);', data: {confirmmessage: 'Are you sure, do you want to activate or deactivate?', url: active_deactive_courses_path(id: course.id)}, class: 'bootstrap_confirm' ) %></td>
+    <td class="drag"><%= course.position %> <span class='icon-resize-vertical' style="vertical-align: middle"></span>	</td>
+</tr>

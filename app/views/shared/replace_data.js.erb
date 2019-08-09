@@ -1,0 +1,25 @@
+$(document).ready(function() {
+  $('#<%= @element_id %>').html("<%= escape_javascript(render @partial,  params: @params, filters: @filters ) %>");
+});
+ 
+$(document).ready(function() {
+  $(".pagination").find("a").attr("data-remote", true);
+
+  $('#j_sort').sortable({
+    handle: '.drag',
+    cursor: 'move',
+    items: 'tr',
+    scroll: true,
+    update: function(){
+      $.ajax({
+        url: $('#j_sort').data('url'),
+        type: 'get',
+        data: $('#j_sort').sortable('serialize'),
+        dataType: 'script',
+        complete: function(request){
+          $('#j_sort').effect('highlight');
+        }
+      });
+    }
+  });
+});

@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand  custom-nav">
+	<div class="container-fluid">
+		<ul class="navbar-nav"> 
+			<li class="navbar-brand">
+				<h2><%= title if defined?(title) %></h2>
+			</li>
+		</ul>
+		<ul class="navbar-nav ml-auto">
+
+			<%  if defined?(new) %>
+			<li class="nav-item">
+				<%= link_to 'New', {action: 'new', controller: params[:controller]}, :class => "btn btn-primary" %>
+			</li>
+			&nbsp;
+			<%end%>
+			<%  if defined?(back) %>
+			<li class="nav-item">
+				<%= link_to 'Back', {action: 'index', controller: params[:controller]}, :class => "btn btn-primary" %>
+			</li>
+			&nbsp;
+			<%end%>
+			<%  if defined?(pdf) %>
+			<li class="nav-item">
+				<%= link_to 'Export PDF', {action: 'export_pdf', controller: params[:controller]}, :class => "btn btn-primary" %>
+			</li>
+			&nbsp;
+			<%end%>
+			<%  if defined?(csv) %>
+			<li class="nav-item">
+				<%= link_to 'Export CSV', {action: 'export_csv', controller: params[:controller]}, :class => "btn btn-primary" %>
+
+			</li>
+			<%end%>
+		</ul>
+	</div>
+</nav>			

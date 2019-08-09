@@ -1,0 +1,11 @@
+<% title = t('common.listing_page',model_name: Course.model_name.human.pluralize) %>
+
+<%= render partial: 'shared/display_title_btns', locals: {title: title, new: true, csv: true, pdf: true} %>
+
+<%= render 'search_form' %>
+
+<%= render :partial => 'active_filter', :locals => { :path => "#{courses_path}"} %>
+
+<div id="<%= params[:controller]%>_div" class="js_populate_table_with_filter">
+  <%= render 'list' %>
+</div>

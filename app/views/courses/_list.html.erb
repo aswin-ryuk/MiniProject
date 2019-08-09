@@ -1,0 +1,11 @@
+<div class='table-responsive'>
+  <table class="table table-bordered table-hover table-condensed custom-table">
+    <thead >
+      <%= render 'shared/list_headers', header: 'courses_list_columns' %>
+    </thead>  
+    <tbody id="j_sort" data-url= "<%= sorting_list_courses_path(page: @page_num) %>">
+      <%= render @courses %>
+    </tbody>
+  </table>
+</div>
+<%= render partial: 'shared/pagination', locals: {list_object: @courses} %>

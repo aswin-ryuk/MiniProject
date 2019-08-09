@@ -1,0 +1,15 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <span class="glyphicon glyphicon-edit"></span> &nbsp; <b> <%= params[:action].capitalize %> </b>
+  </div>
+  <div class="panel-body">
+    <%= f.input :brand_manager %>    
+    <%= f.input :narration %>
+    <%= f.input :invoice_date, as: :string, input_html: {class: 'jquery_date'} %>
+    <%= f.input :amount %>
+    <%= f.input :customer_name %>
+    <%= f.input :reference %>
+    <%= f.submit submit_btn_text , class: 'btn btn-primary submit-button' %>
+  </div>
+</div>
+

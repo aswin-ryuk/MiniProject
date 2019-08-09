@@ -1,0 +1,45 @@
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand -->
+  <span class="navbar-brand" >Menu</span>
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item  <%= 'active' if current_page?(courses_path)%> ">
+      <%= link_to 'Courses', courses_path, class: 'nav-link'  %>
+    </li>
+    <li class="nav-item  <%= 'active' if current_page?(students_path)%> ">
+      <%= link_to 'Students', students_path, class: 'nav-link'  %>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Chart
+      </a>
+      <div class="dropdown-menu">
+        <%= link_to 'Pie chart', pie_chart_students_path, class: 'dropdown-item' %>
+        <%= link_to 'Line chart', line_chart_students_path, class: 'dropdown-item' %>
+      </div>
+    </li>
+    <li class="nav-item  <%= 'active' if current_page?(invoices_path)%> ">
+      <%= link_to 'Invoices', invoices_path, class: 'nav-link'  %>
+    </li>
+    <li class="nav-item  <%= 'active' if current_page?(show_pending_bills_invoices_path)%> ">
+      <%= link_to 'Show Pending Bills', show_pending_bills_invoices_path, class: 'nav-link'  %>
+    </li>
+    <li class="nav-item  <%= 'active' if current_page?(show_collected_bills_invoices_path)%> ">
+      <%= link_to 'Show Collected Bills', show_collected_bills_invoices_path, class: 'nav-link'  %>
+    </li>
+  </ul>
+   <ul class="navbar-nav ml-auto">
+    <% if user_signed_in? %>
+      <span class="navbar" style="color: white; ">
+        Logged in as:&nbsp; <%= current_user.username %></span>&nbsp;
+      <%= link_to 'Edit profile', edit_user_registration_path, class: "btn btn-warning" %>&nbsp;|&nbsp;
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, class: " glyphicon glyphicon-log-in btn btn-danger" %>
+    <% else %>
+      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-warning" %>&nbsp;|&nbsp;
+      <%= link_to "Login", new_user_session_path, class: " glyphicon glyphicon-log-in btn btn-warning" %>
+    <% end %>
+  </ul>
+</nav>
+<br>

@@ -1,0 +1,8 @@
+<% title = "Column Chart"%>
+
+<%= render partial: 'shared/display_title_btns', locals: {title: title, back: true} %>
+<fieldset class="custom_fieldset">
+
+<%= column_chart @data , xtitle:  'courses', ytitle: 'students'  %>
+
+</fieldset>
