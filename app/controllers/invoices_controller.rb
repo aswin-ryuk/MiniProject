@@ -36,8 +36,8 @@ class InvoicesController < ApplicationController
 
   def add_collection    
     @collection = Collection.new(reference: @invoice.reference, collection_date: Date.today)
-    render json: {content: render_to_string('invoices/add_collection', locals: {collection: @collection},
-          formats: [:html], layout: false ) }
+    render 'invoices/add_collection', locals: {collection: @collection},
+          :content_type => 'text/html', layout: false
   end
 
   def save_collection

@@ -47,7 +47,7 @@ GEM
       popper_js (>= 1.14.3, < 2)
       sassc-rails (>= 2.0.0)
     builder (3.2.3)
-    cancan (1.6.10)
+    cancancan (3.0.0)
     chartkick (2.2.5)
     coderay (1.1.2)
     coffee-rails (4.2.2)
@@ -208,7 +208,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap (~> 4.0)
-  cancan (~> 1.6, >= 1.6.10)
+  cancancan (= 3.0.0)
   chartkick (= 2.2.5)
   coffee-rails (~> 4.2)
   country_select

@@ -42,6 +42,7 @@ gem 'pry'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
+#gem 'jquery-ui-rails', '~> 2.0'
 # Turbolinks makes navigating your web application faster. read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -50,7 +51,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'cancan', '~> 1.6', '>= 1.6.10'
+gem 'cancancan', '3.0.0'
 gem 'devise', '~> 4.4', '>= 4.4.1'
 gem 'will_paginate', '~> 3.1', '>= 3.1.7'
 gem 'will_paginate-bootstrap'             , '1.0.1'

@@ -5,9 +5,9 @@ $(document).on('turbolinks:load ready', function(){
   $('.jquery_date').datepicker({format: "dd-M-yyyy", clearBtn: true});
   sortableTable();
   bootstrapConfirm();
-  modalLayout();
   loadSpinner();
   customAutocomplete();
+   modalLayout();
 });
 
 
