@@ -2,34 +2,35 @@ $(document).on('turbolinks:load ready', function(){
   submitRefresh();
   selectFilter();
   $('.dropdown-toggle').dropdown();
-  $('.jquery_date').datepicker({format: "dd-M-yyyy", clearBtn: true});
+  $('[data-toggle="tooltip"]').tooltip(); 
+  //$('.jquery_date').datepicker({dateFormat: 'dd-mm-yy',changeMonth: true, changeYear: true});
+  $('.jquery_date').datepicker();
   sortableTable();
   bootstrapConfirm();
   loadSpinner();
   customAutocomplete();
-   modalLayout();
+  modalLayout();
 });
 
+function loadSpinner(){
+
+  $(document).ajaxStart(function(){
+    $("#spinnerModal").modal();
+  });
+
+  $(document).ajaxComplete(function(){
+    $("#spinnerModal").modal('hide');
+  });
+
+  $(document).ajaxError(function(){
+    $("#spinnerModal").modal('hide');
+  });  
+}
 
 function customAutocomplete(){
   $('#autocomplete-field').autocomplete({
      source: $('#autocomplete-field').data('source')
   });
-}
-
-function loadSpinner(){
-
-$(document).ajaxStart(function(){
-  $("#spinnerModal").modal();
-});
-
-$(document).ajaxComplete(function(){
-  $("#spinnerModal").modal('hide');
-});
-
-$(document).ajaxError(function(){
-  $("#spinnerModal").modal('hide');
-});  
 }
 
 function submitRefresh(){
@@ -47,7 +48,8 @@ function submitRefresh(){
 
 
 function selectFilter(){
-  $(".js_btn_filter").click(function(){ 
+  $(".js_btn_filter").click(function(event){ 
+    event.preventDefault();
     $(".js_dropdown_txt").html($(this).text());  
      $.ajax({
       type : "GET",
@@ -57,7 +59,6 @@ function selectFilter(){
     })    
   });
 }
-
 
 function modalLayout() {
 
@@ -79,56 +80,14 @@ function modalLayout() {
             $('.modal-title').html(data.title);
           }
           if(data.footerText){
-            $('.modal-footer').html(data.footerText);
+            $('modal-footer').html(data.footerText);
           }
-          $('.modal').modal('show');
+          $('#load-modal').modal('show');
         }
       });
     }   
   });
 }
-
-
-
-// $(document).ready(function() {
-
-// $('#j_sort').sortable({
-//     handle: '.drag',
-//     cursor: 'move',
-//     items: 'tr',
-//     scroll: true,
-//     update: function(){
-//       $.ajax({
-//         url: $('#j_sort').data('url'),
-//         type: 'get',
-//         data: $('#j_sort').sortable('serialize'),
-//         dataType: 'script',
-//         complete: function(request){
-//           $('#j_sort').effect('highlight');
-//         }
-//       });
-//     }
-//   });
-
-//   $('#j_sort').sortable({
-//     handle: '.drag',
-//     cursor: 'move',
-//     items: 'tr',
-//     scroll: true,
-//     update: function(){
-//       $.ajax({
-//         url: $('#j_sort').data('url'),
-//         type: 'get',
-//         data: $('#j_sort').sortable('serialize'),
-//         dataType: 'script',
-//         complete: function(request){
-//           $('#j_sort').effect('highlight');
-//         }
-//       });
-//     }
-//   });
-
-// });
 
  
 function bootstrapConfirm(){

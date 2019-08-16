@@ -4,13 +4,13 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_user!
 
-  PER_PAGE = 3
+  PER_PAGE = 5
 
   include ExportCsv
 
   def refresh_table
     respond_to do |format|
-      format.html {} # Do nothing, so Rails will render the view list.rhtml
+      format.html {} # Do nothing, so Rails will render the view list.html
       format.js do
         @element_id, @partial, @params = "#{params[:controller]}_div", 'list', params
         render 'shared/replace_data'

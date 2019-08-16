@@ -36,16 +36,23 @@ class InvoicesController < ApplicationController
 
   def add_collection    
     @collection = Collection.new(reference: @invoice.reference, collection_date: Date.today)
-    render 'invoices/add_collection', locals: {collection: @collection},
-          :content_type => 'text/html', layout: false
+    render json: {content: render_to_string('invoices/add_collection', locals: {collection: @collection},
+          formats: [:html], layout: false ) }
   end
 
   def save_collection
     @collection = Collection.new(collection_params)
-    @collection.amount = -(@collection.amount.abs) if @collection.amount.present?
-    if @collection.save
-      flash[:notice] = 'Collection was successfully added.'
-      redirect_to invoices_path
+    if @collection.amount.present?
+      @collection.amount = -(@collection.amount.abs) 
+      collected_total = Collection.where(reference: @collection.reference).sum(:amount).abs 
+      invoice_amount = Invoice.where(reference: @collection.reference).first.amount
+      @check = ((invoice_amount - collected_total) >= @collection.amount.abs)
+      if @check && @collection.save 
+        flash[:notice] = 'Collection was successfully added.'
+        redirect_to invoices_path
+      else
+        render :add_collection
+      end
     else
       render :add_collection
     end

@@ -3,8 +3,7 @@ class Course < ApplicationRecord
 	include GenericModel
 	
 	validates :name, :active, presence: true
-
-	validates :name, uniqueness: true
+	validates :name, uniqueness: { case_sensitive: false }
 
 	has_and_belongs_to_many :students
 

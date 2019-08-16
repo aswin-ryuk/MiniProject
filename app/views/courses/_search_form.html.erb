@@ -1,27 +1,26 @@
-<%= simple_form_for(:search, url: courses_path, defaults: { required: false } ,html: {id: 'courses_search_form',name: 'courses_search_form', method: :get, class: 'form-horizontal custom-search-form', remote: true }) do |f|%>
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <%= 'Search' %>
-      </div>
-      <div class='panel-body'>
-        
+<%= simple_form_for(:search, url: courses_path, defaults: { required: false } ,html: {autocomplete: "off", id: 'courses_search_form',name: 'courses_search_form', method: :get, class: 'form-horizontal custom-search-form', remote: true }) do |f|%>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <%= 'Search' %>
+  </div>
+  <div class='panel-body'>
     <div class="row">
       <div class="col-md-4">
-        <%= f.input :name, label: 'Name', input_html:{value: session[:filters_name], id: '#autocompletefield', data: { source: populate_courses_courses_path} }  %>
+        <%= f.input :name, label: 'Name', input_html:{value: session[:filters_name], data: { source: populate_courses_courses_path} }  %>
+      </div>
+      <div class="col-md-1" style="float: left; max-width: 15%; margin-top: 1%;">
+         OR
       </div>
       <div class="col-md-5">
         <%= f.input :description, label: 'Description', input_html: {value: session[:filters_desc],class: ''} %>
       </div>
-      <div class="col-md-2 img-responsive">
-        <%= link_to "#{image_tag('search.png', {alt: 'Refresh', align: 'middle', border: '0', size: "25x25", local_asset: false})}".html_safe, "javascript:void(0);" ,data: {url: courses_path, form: 'courses_search_form'},class: 'js_custom_refresh' %>
+      <div class="col-md-1 img-responsive">
+        <%= link_to "#{image_tag('search.png', {alt: 'Refresh', align: 'middle', border: '0', size: "25x25", local_asset: false})}".html_safe, "javascript:void(0);" ,data: {url: courses_path, form: 'courses_search_form', toggle: "tooltip", title: "search"},class: 'js_custom_refresh'%>
       </div>
       <div class="col-md-1 img-responsive">
-        <%= link_to "#{image_tag('clear.png', {alt: 'Refresh', align: 'middle', border: '0', size: "25x25", local_asset: false})}".html_safe, "javascript:void(0);" ,data: {url: clear_fliter_courses_path, form: 'courses_search_form'},class: 'js_custom_refresh' %>
+        <%= link_to "#{image_tag('clear.png', {alt: 'Refresh', align: 'middle', border: '0', size: "25x25", local_asset: false})}".html_safe, "javascript:void(0);" ,data: {url: clear_fliter_courses_path, form: 'courses_search_form', toggle: "tooltip", title: "clear filter"},class: 'js_custom_refresh'  %>
       </div>
-
-    </div>    
-
-
-      </div>
-    </div>
+    </div> 
+  </div>
+</div>
 <% end %>

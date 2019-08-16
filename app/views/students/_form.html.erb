@@ -5,8 +5,9 @@
   <div class="panel-body">
     <%= f.input :name %>
     <%= f.input :dob, as: :string, input_html: {class: 'jquery_date'} %>
-    <%= f.input :gender, as: :radio_buttons, collection: Student::GENDER %>
-    <%= f.input :contact_number %>    
+    <%= f.input :gender, as: :radio_buttons, collection: Student::GENDER,
+                wrapper: :horizontal_radio_and_checkboxes %>
+    <%= f.input :contact_number, input_html: {maxlength: 10 } %>    
     <%= f.association :courses, collection: Course.active, multiple: true, include_hidden: false,  include_blank: false %>
     <%= f.input :active, as: :boolean,
                 checked_value: 'Y',

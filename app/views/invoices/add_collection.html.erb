@@ -1,9 +1,9 @@
 <div id="add_colloction_error">	
 </div>
 
-<%= simple_form_for @collection, url: save_collection_invoices_path , wrapper: :horizontal_form, html: {  :class => 'form-horizontal' , :remote => true} do |f| %>
+<%= simple_form_for @collection, url: save_collection_invoices_path , wrapper: :horizontal_form, html: { autocomplete: "off", :class => 'form-horizontal' , :remote => true} do |f| %>
     <%= f.input :reference, input_html: { readonly: true } %>
     <%= f.input :collection_date, as: :string,  input_html: { readonly: true , class: 'jquery_date'} %>
     <%= f.input :amount %>
-    <%= f.submit "Add Amount" , class: 'btn btn-primary submit-button' %>
+    <%= f.submit "Add Amount" , class: 'btn btn-primary submit-button-modal' %>
 <% end %>

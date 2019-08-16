@@ -1,24 +1,39 @@
-# README
+# About Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is application is developed using rails version 5.1 and ruby version 2.3.
 
-Things you may want to cover:
+List of gems used in the application
 
-* Ruby version
+* Authentication     - Devise 
+* Authorization      - cancacan
+* chart              - highchart
+* Pdf generation     - Prawn, Prawn-table
+* Pagination         - Will paginate
+* UI design          - Bootstrap4, bootbox, Jquery
+* form               - Simple form
 
-* System dependencies
+list of functionalities implemented in the aplication
 
-* Configuration
+* All UI designs are done using bootstrap4.
+* Form designs are done using simple form.
+* Bootstrap Datepicker
+* Bootstrap Dropdown filter.
+* bootbox conformation.
+* Modal window.
+* Jquery sortable.
+* Ajax
+* CSV file download.
+* PDF file download.
+* Chart representation.
+* Rake task.
+* Table migrations.
+* Associations.
+* REST Resources.
+* Model concerns.
+* Callbacks and Filters.
+* Mixin.
 
-* Database creation
+# Hosted in Heroku
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Please use the link to preview the application -  http://localhost:7777/students/new
+  

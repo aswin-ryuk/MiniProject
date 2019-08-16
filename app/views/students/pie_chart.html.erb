@@ -1,7 +1,7 @@
 <% title = "Pie Chart"%>
 
 <%= render partial: 'shared/display_title_btns', locals: {title: title, back: true} %>
-<fieldset class="custom_fieldset">
 
-<%= pie_chart @data, adapter: 'highcharts' ,height: '300px', library: {chart: { options3d: {enabled: true,alpha: 45,beta: 0}},plotOptions: {pie: {depth: 35}}}  %>
+<fieldset class="custom_fieldset">
+	<%= pie_chart @data, adapter: 'highcharts' ,height: '300px', library: {chart: { options3d: {enabled: true,alpha: 45,beta: 0}},plotOptions: {pie: {depth: 35}}}  %>
 </fieldset>

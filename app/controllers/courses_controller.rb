@@ -8,14 +8,21 @@ class CoursesController < ApplicationController
 
   def index
     if params[:search].present? 
-      courses = Course.where("lower(description) LIKE '%#{params[:search][:description].downcase}%'")
-      session[:filters_name] = params[:search][:name] if params[:search][:name].present? 
-      session[:filters_desc] = params[:search][:description] if params[:search][:description].present?    
+      conditions = []
+      if params[:search][:name].present?
+        conditions << "lower(name) LIKE '%#{params[:search][:name].downcase}%'"
+        session[:filters_name] = params[:search][:name]
+      end
+      if params[:search][:description].present?
+        conditions << "lower(description) LIKE '%#{params[:search][:description].downcase}%'"    
+        session[:filters_desc] = params[:search][:description]
+      end
+      courses = Course.where(conditions.first).where(conditions.second).order("position")
     else
       courses = Course.order("position")
     end
     session[:filter_type] = params[:filter_type] if params[:filter_type]
-    filter_type = session[:filter_type] || 'all'   
+    filter_type = session[:filter_type] || 'all'
     courses = dropdown_filter(filter_type, courses)
     session[:courses_list] = courses
     @page_num =  params[:page].present? ? params[:page] : 1
@@ -61,10 +68,9 @@ class CoursesController < ApplicationController
   def sorting_list
     params[:sorting_ids].each_with_index do |id, index|
       record = Course.where(id: id).first
-      binding.pry
       record.update_column(:position, ((params[:page].to_i*PER_PAGE-PER_PAGE)+(index+1))) if record.present?
     end
-    index   
+    render js: "window.location = '#{courses_path(page: params[:page])}'"  
   end
 
   def clear_fliter

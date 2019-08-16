@@ -1,9 +1,9 @@
 <tr>
-  <td><%=link_to student.name, edit_student_path(student) %></td>
+  <td><%=link_to student.name, edit_student_path(student), data: {toggle: "tooltip", title: "edit"} %></td>
   <td><%= student.dob %></td>
   <td><%= student.gender == 'M' ? 'Male' : 'Female' %></td>
   <td><%= student.contact_number %></td>
   <td style="text-align: center;"> <%= link_to(image_tag("list", 
-        {alt: "", align: "middle", border: "0", size: "20x20" }) + "", 'javascript:void(0);', data: { title: 'Courses List', url: courses_popup_students_path(id: student.id)}, class: 'js_load_modal_popup' ) %></td>
+        {alt: "", align: "middle", border: "0", size: "20x20" }) + "", 'javascript:void(0);', data: { toggle: "tooltip", title: 'Courses List', url: courses_popup_students_path(id: student.id)}, class: 'js_load_modal_popup') %></td>
   <td><%= student.active %></td>
 </tr>

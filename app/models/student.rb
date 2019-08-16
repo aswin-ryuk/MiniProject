@@ -1,7 +1,6 @@
 class Student < ApplicationRecord
 
 	validates :name, :dob, :gender, :contact_number, :active, :course_ids, presence: true
-
 	validates :contact_number, length: {maximum: 10}
 
 	scope :active, -> { where(active: 'Y') }
