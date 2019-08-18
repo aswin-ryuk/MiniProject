@@ -1,8 +1,6 @@
 class CoursesController < ApplicationController
 
-#load_and_authorize_resource
-
-  before_action :set_course, only: [:active_deactive, :edit, :update]
+load_and_authorize_resource
 
   before_action :allow_params, only: [:index, :sorting_list]
 
@@ -42,7 +40,7 @@ class CoursesController < ApplicationController
   def create
     @course = Course.new(course_params)
     if @course.save
-      flash[:notice] = 'Course was successfully created.' 
+      flash[:notice] = t('common.created',model_name: Course.model_name)
       redirect_to courses_path
     else
       render :new 
@@ -51,7 +49,7 @@ class CoursesController < ApplicationController
 
   def update
     if @course.update_attributes(course_params)
-      flash[:notice] = 'Course was successfully updated.' 
+      flash[:notice] = t('common.updated',model_name: Course.model_name)
       redirect_to courses_path
     else
       render :edit 

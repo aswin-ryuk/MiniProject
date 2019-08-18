@@ -1,6 +1,6 @@
 class InvoicesController < ApplicationController
 
-  before_action :set_invoice, only: [:show, :edit, :update, :add_collection, :invoice_details]
+load_and_authorize_resource
 
   def index
     @invoices = Invoice.all.paginate :per_page => PER_PAGE, :page => params[:page]
@@ -27,7 +27,7 @@ class InvoicesController < ApplicationController
   def create
     @invoice = Invoice.new(invoice_params)
     if @invoice.save
-      flash[:notice] = 'Invoice was successfully created.'
+      flash[:notice] =  t('common.created',model_name: Invoice.model_name)
       redirect_to invoices_path
     else
       render :new
@@ -66,7 +66,7 @@ class InvoicesController < ApplicationController
   
   def update
     if @invoice.update(invoice_params)
-      flash[:notice] = 'Invoice was successfully updated.'
+      flash[:notice] = t('common.updated',model_name: Invoice.model_name)
       redirect_to invoices_path
     else
       render :edit        
@@ -74,12 +74,8 @@ class InvoicesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_invoice
-      @invoice = Invoice.where(id: params[:id]).first
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
+   
+   # Never trust parameters from the scary internet, only allow the white list through.
     def invoice_params
       params.require(:invoice).permit(:brand_manager, :narration, :invoice_date, :amount, :customer_name, :reference)
     end

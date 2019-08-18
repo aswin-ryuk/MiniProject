@@ -35,5 +35,4 @@ list of functionalities implemented in the aplication
 
 # Hosted in Heroku
 
-* Please use the link to preview the application -  http://localhost:7777/students/new
-  
+* Please use the link to preview the application -  https://ror-mini-application.herokuapp.com

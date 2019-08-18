@@ -4,7 +4,7 @@ $(document).on('turbolinks:load ready', function(){
   $('.dropdown-toggle').dropdown();
   $('[data-toggle="tooltip"]').tooltip(); 
   //$('.jquery_date').datepicker({dateFormat: 'dd-mm-yy',changeMonth: true, changeYear: true});
-  $('.jquery_date').datepicker();
+  $('.jquery_date').datepicker({format: 'yyyy-mm-dd',autoclose: true});
   sortableTable();
   bootstrapConfirm();
   loadSpinner();

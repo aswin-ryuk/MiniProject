@@ -5,7 +5,7 @@
   </div>
   <div class='panel-body'>
 
-    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), wrapper: :horizontal_form, html: { class: 'custom-form '} ) do |f| %>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), wrapper: :horizontal_form, html: {autocomplete: "off", class: 'custom-form '} ) do |f| %>
     <div class="form-inputs">
       <%= f.input :username,
       required: false,

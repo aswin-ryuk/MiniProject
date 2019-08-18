@@ -26,6 +26,8 @@ en:
     new: "New %{model_name}"
     edit: "Edit %{model_name}"
     modified_successfully: 'modified_successfully'
+    updated: "%{model_name} was successfully updated." 
+    created: "%{model_name} was successfully created."
   course:
     name: 'Name'
     description: 'Description'
