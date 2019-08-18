@@ -41,7 +41,7 @@ load_and_authorize_resource
              ['Total Number of Boys', Student.where(gender: 'M').count ]]
   end
 
-  def line_chart
+  def column_chart
     courses = Course.active
     @data = []
     courses.each do |course|

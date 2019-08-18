@@ -17,7 +17,7 @@
       </a>
       <div class="dropdown-menu">
         <%= link_to 'Pie chart', pie_chart_students_path, class: 'dropdown-item' %>
-        <%= link_to 'Line chart', line_chart_students_path, class: 'dropdown-item' %>
+        <%= link_to 'Column chart', column_chart_students_path, class: 'dropdown-item' %>
       </div>
     </li>
     <li class="nav-item  <%= 'active' if current_page?(invoices_path)%> ">
@@ -28,6 +28,9 @@
     </li>
     <li class="nav-item  <%= 'active' if current_page?(show_collected_bills_invoices_path)%> ">
       <%= link_to 'Show Collected Bills', show_collected_bills_invoices_path, class: 'nav-link'  %>
+    </li>
+    <li class="nav-item  <%= 'active' if current_page?(abouts_path)%> ">
+      <%= link_to 'About', abouts_path, class: 'nav-link'  %>
     </li>
   </ul>
    <ul class="navbar-nav ml-auto">

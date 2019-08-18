@@ -1,0 +1,43 @@
+<%= render partial: 'shared/display_title_btns', locals: {title: "Application Details"} %>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<span class="glyphicon glyphicon-edit"></span> &nbsp; <b> <%= params[:action].capitalize %> </b>
+	</div>
+	<div class="panel-body" style="margin-left: 15%">
+
+		<h5>This is application is developed using rails version 5.1 and ruby version 2.3. </h5>
+
+		<h5>List of gems used in the application</h5>
+		<ul>
+		<li> Authentication     - Devise </li>
+		<li> Authorization      - cancacan</li>
+		<li> chart              - highchart</li>
+		<li> Pdf generation     - Prawn, Prawn-table</li>
+		<li> Pagination         - Will paginate</li>
+		<li> UI design          - Bootstrap4, bootbox, Jquery</li>
+		<li> form               - Simple form</li>
+		</ul>
+		<h5>List of functionalities implemented in the aplication</h5>
+		<ul>
+		<li> All UI designs are done using bootstrap4.</li>
+		<li> Form designs are done using simple form.</li>
+		<li> Bootstrap Datepicker</li>
+		<li> Bootstrap Dropdown filter.</li>
+		<li> bootbox conformation.</li>
+		<li> Modal window.</li>
+		<li> Jquery sortable.</li>
+		<li> Ajax</li>
+		<li> CSV file download.</li>
+		<li> PDF file download.</li>
+		<li> Chart representation.</li>
+		<li> Rake task.</li>
+		<li> Table migrations.</li>
+		<li> Associations.</li>
+		<li> REST Resources.</li>
+		<li> Model concerns.</li>
+		<li> Callbacks and Filters.</li>
+		<li> Mixin.</li>
+		</ul>
+	</div>
+</div>

@@ -10,9 +10,11 @@ Rails.application.routes.draw do
 		collection do
 			get :courses_popup
 			get :pie_chart
-			get :line_chart
+			get :column_chart
 		end
   end
+
+  resources :abouts, only: :index
 
   resources :courses, concerns: [:export_csv], except:  [:show] do
 		collection do

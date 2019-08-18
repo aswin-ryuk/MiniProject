@@ -12,7 +12,7 @@ List of gems used in the application
 * UI design          - Bootstrap4, bootbox, Jquery
 * form               - Simple form
 
-list of functionalities implemented in the aplication
+List of functionalities implemented in the aplication
 
 * All UI designs are done using bootstrap4.
 * Form designs are done using simple form.
