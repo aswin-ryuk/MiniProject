@@ -38,7 +38,7 @@ gem 'simple_form', '~> 3.5'
 gem 'country_select'
 
 gem 'pry'
-
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'

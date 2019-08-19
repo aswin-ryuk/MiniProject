@@ -37,11 +37,11 @@
     <% if user_signed_in? %>
       <span class="navbar" style="color: white; ">
         Logged in as:&nbsp; <%= current_user.username %></span>&nbsp;
-      <%= link_to 'Edit profile', edit_user_registration_path, class: "btn btn-warning" %>&nbsp;|&nbsp;
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, class: " glyphicon glyphicon-log-in btn btn-danger" %>
+      <%= link_to '<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit profile'.html_safe, edit_user_registration_path, class: "btn btn-warning" %>&nbsp;|&nbsp;
+      <%= link_to '<i class="fa fa-sign-out" aria-hidden="true"></i> Logout'.html_safe, destroy_user_session_path, method: :delete, class: " btn btn-danger" %>
     <% else %>
-      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-warning" %>&nbsp;|&nbsp;
-      <%= link_to "Login", new_user_session_path, class: " glyphicon glyphicon-log-in btn btn-warning" %>
+      <%= link_to '<i class="fa fa-sign-in" aria-hidden="true"></i> Sign up'.html_safe, new_user_registration_path, class: "btn btn-warning" %>&nbsp;|&nbsp;
+      <%= link_to '<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Login'.html_safe, new_user_session_path, class: " btn btn-warning" %>
     <% end %>
   </ul>
 </nav>

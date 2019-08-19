@@ -9,26 +9,25 @@
 
 			<%  if defined?(new) %>
 			<li class="nav-item">
-				<%= link_to 'New', {action: 'new', controller: params[:controller]}, :class => "btn btn-primary" %>
+				<%= link_to '<i class="fa fa-file-o" aria-hidden="true"></i> New'.html_safe, {action: 'new', controller: params[:controller]}, :class => "btn btn-primary" %>
 			</li>
 			&nbsp;
 			<%end%>
 			<%  if defined?(back) %>
 			<li class="nav-item">
-				<%= link_to 'Back', {action: 'index', controller: params[:controller]}, :class => "btn btn-primary" %>
+				<%= link_to '<i class="fa fa-angle-left" aria-hidden="true"></i> Back'.html_safe, {action: 'index', controller: params[:controller]}, :class => "btn btn-primary" %>		
 			</li>
 			&nbsp;
 			<%end%>
 			<%  if defined?(pdf) %>
 			<li class="nav-item">
-				<%= link_to 'Export PDF', {action: 'export_pdf', controller: params[:controller]}, :class => "btn btn-primary" %>
+				<%= link_to '<i class="fa fa-file-pdf-o" aria-hidden="true"></i> Export PDF'.html_safe, {action: 'export_pdf', controller: params[:controller]}, :class => "btn btn-primary" %>
 			</li>
 			&nbsp;
 			<%end%>
 			<%  if defined?(csv) %>
 			<li class="nav-item">
-				<%= link_to 'Export CSV', {action: 'export_csv', controller: params[:controller]}, :class => "btn btn-primary" %>
-
+				<%= link_to '<i class="fa fa-file-text-o" aria-hidden="true"></i> Export CSV'.html_safe, {action: 'export_csv', controller: params[:controller]}, :class => "btn btn-primary" %>
 			</li>
 			<%end%>
 		</ul>
