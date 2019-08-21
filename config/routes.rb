@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   end
 
   resources :abouts, only: :index
+  resources :feedbacks
 
   resources :courses, concerns: [:export_csv], except:  [:show] do
 		collection do

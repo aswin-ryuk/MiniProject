@@ -1,0 +1,8 @@
+<div id="add_feedback_error">	
+</div>
+
+<%= simple_form_for @feedback, html: { autocomplete: "off", :class => 'form-horizontal' , :remote => true} do |f| %>
+    <%= f.input :name %>
+    <%= f.input :user_comments, as: :text,  input_html: { rows: 5} %>
+    <%= f.submit "Save" , class: 'btn btn-primary' %>
+<% end %>

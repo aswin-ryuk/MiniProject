@@ -1,0 +1,3 @@
+$("#add_feedback_error").html("<%=  @feedback.errors.full_messages.join('<br>').html_safe %>");
+
+$("#add_feedback_error").addClass("alert alert-danger");

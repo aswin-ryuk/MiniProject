@@ -78,14 +78,14 @@ load_and_authorize_resource
   end
 
   def export_csv
-    content = generate_course_list(Course.all, view_context.courses_list_columns.collect{ |r| r[:label] })
+    content = generate_course_list(Course.all.order("position"), view_context.courses_list_columns.collect{ |r| r[:label] })
     # Send the file
     filename = "courses_list.csv"
     send_data  content, :type => 'text/csv', :filename =>  filename, :disposition => 'attachment'
   end
 
   def export_pdf    
-    courses = Course.order("name")
+    courses = Course.order("position")
     # Create the PDF document
     pdf = Prawn::Document.new
     pdf.move_down 10

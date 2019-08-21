@@ -10,7 +10,24 @@ $(document).on('turbolinks:load ready', function(){
   loadSpinner();
   customAutocomplete();
   modalLayout();
+  scrolToTop();
 });
+
+function scrolToTop(){ 
+
+  $(window).scroll(function() {
+    if ($(this).scrollTop()) {
+        $('#myBtn').fadeIn();
+    } else {
+        $('#myBtn').fadeOut();
+    }
+  });
+  
+  $(document).on('click','#myBtn',function (event) {
+   $("html, body").animate({scrollTop: 0}, 100);
+     event.preventDefault();
+  });
+}
 
 function loadSpinner(){
 
