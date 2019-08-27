@@ -1,6 +1,6 @@
 # About Application
 
-This is application is developed using rails version 5.1 and ruby version 2.3.
+This application is developed using rails version 5.1 and ruby version 2.3.
 
 List of gems used in the application
 
@@ -20,6 +20,7 @@ List of functionalities implemented in the aplication
 * Bootstrap Dropdown filter.
 * bootbox conformation.
 * Modal window.
+* User Feedback.
 * Jquery sortable.
 * Ajax
 * CSV file download.
