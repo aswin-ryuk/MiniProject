@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   validates :username, presence: true, uniqueness: true
 
-  validates :role, presence: true, uniqueness: true
+  validates :role, presence: true
 
   ROLES=[['Admin', 'admin'],['Guest','guest']]
 
