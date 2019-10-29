@@ -1,0 +1,32 @@
+<% title = 'API' %>
+
+<%= render partial: 'shared/display_title_btns', locals: {title: title} %>
+
+<div class="alert alert-warning">
+	<li> Please use your own <b> Get API</b> link or use any below link </li>
+	<li> https://jsonplaceholder.typicode.com/todos </li>
+	<li> https://jsonplaceholder.typicode.com/todos/1 </li>
+</div>
+
+<%= simple_form_for(:api, url: apis_path, html: {  :class => 'form-horizontal custom-api-form' }, 
+	method: :get, remote: true) do |f| %>
+	<div class="row">
+		<div class="col-md-8">
+			<%= f.input :url, label: 'Enter url' %>
+    	</div>
+    	<div class="col-md-4">
+    		<%= f.submit 'Hit API' , class: 'btn btn-primary' %>
+    	</div>
+    </div>
+<% end %>
+
+
+<div id='api_response' class="empty">
+	<%= render 'response' %>
+</div>
+
+<script type="text/javascript">
+	if ($('#api_response').hasClass('empty')) {
+		$('#api_response').hide();
+	}
+</script>

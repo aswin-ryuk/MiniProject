@@ -48,6 +48,8 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-datepicker-rails', '~> 1.8', '>= 1.8.0.1'
+gem 'bootstrap4-datetime-picker-rails', '~> 0.3.1'
+gem 'momentjs-rails', '~> 2.17.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -56,6 +58,7 @@ gem 'cancancan', '3.0.0'
 gem 'devise', '~> 4.4', '>= 4.4.1'
 gem 'will_paginate', '~> 3.1', '>= 3.1.7'
 gem 'will_paginate-bootstrap'             , '1.0.1'
+gem 'httparty', '~> 0.14.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -63,6 +66,9 @@ gem 'will_paginate-bootstrap'             , '1.0.1'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   #gem 'byebug', platform: :mri
+  gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl_rails', '4.8.0'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -76,5 +82,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'prawn', '~> 2.1'
 gem 'prawn-table', '~> 0.2.2'
 
- gem 'chartkick', '2.2.5'
- gem 'highcharts_rails'
+gem 'chartkick', '2.2.5'
+gem 'highcharts_rails'

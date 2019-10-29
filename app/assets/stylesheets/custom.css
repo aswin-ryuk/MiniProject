@@ -102,6 +102,16 @@
   }
 }
 
+.custom-api-form .form-group .form-control{
+  width: 80%;
+  margin-left: 20%;
+}
+
+.custom-api-form .form-group .control-label{
+  float: left;
+  max-width: 15%;
+  margin-top: 1%;
+}
 
 .custom-search-form .form-group .form-control{
   width: 65%;
@@ -113,6 +123,18 @@
   float: left;
   max-width: 15%;
   margin-top: 2%;
+}
+
+.custom_report-search-form .form-group .form-control{
+  width: 65%;
+  margin-left: 28%;
+  margin-top: 1%;
+}
+
+.custom_report-search-form .form-group .control-label{
+  float: left;
+  max-width: 55%;
+  margin-top: 1%;
 }
 
 span.help-block{

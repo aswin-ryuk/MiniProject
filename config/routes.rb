@@ -14,7 +14,20 @@ Rails.application.routes.draw do
 		end
   end
 
-  resources :abouts, only: :index
+  resources :reports, except: [:show] do
+		collection do
+			get :destroy_record
+		end
+  end
+ 
+   resources :report_generations, concerns: [:export_csv], only:  [:index] do
+		collection do
+			post :generate_report
+			get  :generate_report
+		end
+  end
+
+  resources :abouts, :apis, only: :index
   resources :feedbacks
 
   resources :courses, concerns: [:export_csv], except:  [:show] do
@@ -29,6 +42,7 @@ Rails.application.routes.draw do
 
   resources :invoices do
 	collection do
+		get :requirements
 		get :show_pending_bills
 		get :show_collected_bills
 		get :add_collection

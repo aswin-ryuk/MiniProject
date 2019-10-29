@@ -8,8 +8,9 @@ class User < ApplicationRecord
 
   validates :role, presence: true
 
-  ROLES=[['Admin', 'admin'],['Guest','guest']]
+  has_many :reports
 
+  ROLES=[['Admin', 'admin'],['Guest','guest']]
 
   def admin?
   	self.role == 'admin'

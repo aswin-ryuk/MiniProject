@@ -22,14 +22,32 @@
         <%= link_to 'Column chart', column_chart_students_path, class: 'dropdown-item' %>
       </div>
     </li>
-    <li class="nav-item  <%= 'active' if current_page?(invoices_path)%> ">
-      <%= link_to 'Invoices', invoices_path, class: 'nav-link'  %>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Invoice Generation
+      </a>
+      <div class="dropdown-menu">
+        <%= link_to 'Requirement', requirements_invoices_path, class: 'dropdown-item'  %>
+        <%= link_to 'Invoices', invoices_path, class: 'dropdown-item'  %>
+        <%= link_to 'Show Pending Bills', show_pending_bills_invoices_path, class: 'dropdown-item'  %>
+        <%= link_to 'Show Collected Bills', show_collected_bills_invoices_path, class: 'dropdown-item'  %>
+      </div>
     </li>
-    <li class="nav-item  <%= 'active' if current_page?(show_pending_bills_invoices_path)%> ">
-      <%= link_to 'Show Pending Bills', show_pending_bills_invoices_path, class: 'nav-link'  %>
+
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Sweety
+      </a>
+      <div class="dropdown-menu">
+        <%= link_to 'Requirement', requirements_invoices_path, class: 'dropdown-item'  %>
+        <%= link_to 'Reports', reports_path, class: 'dropdown-item'  %>
+        <%= link_to 'Report Generations', report_generations_path, class: 'dropdown-item' %>
+        <%= link_to 'About', abouts_path, class: 'dropdown-item' %>
+      </div>
     </li>
-    <li class="nav-item  <%= 'active' if current_page?(show_collected_bills_invoices_path)%> ">
-      <%= link_to 'Show Collected Bills', show_collected_bills_invoices_path, class: 'nav-link'  %>
+
+    <li class="nav-item  <%= 'active' if current_page?(apis_path)%> ">
+      <%= link_to 'API', apis_path, class: 'nav-link'  %>
     </li>
     <li class="nav-item  <%= 'active' if current_page?(abouts_path)%> ">
       <%= link_to 'About', abouts_path, class: 'nav-link'  %>

@@ -16,6 +16,9 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require bootstrap-datepicker
+//= require moment
+//= require moment-timezone-with-data
+//= require tempusdominus-bootstrap-4
 //= require turbolinks
 //= require bootbox
 //= require custom
