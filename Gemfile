@@ -59,6 +59,7 @@ gem 'devise', '~> 4.4', '>= 4.4.1'
 gem 'will_paginate', '~> 3.1', '>= 3.1.7'
 gem 'will_paginate-bootstrap'             , '1.0.1'
 gem 'httparty', '~> 0.14.0'
+gem 'activerecord-session_store'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

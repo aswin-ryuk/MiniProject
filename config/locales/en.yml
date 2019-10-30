@@ -49,5 +49,10 @@ en:
     total_collection: 'Total Collection'
     balance_due: 'Balance Due'
     add_collection: 'Add Collection amount'
-
+  report:
+    name: 'Name'
+    glucose_level: 'Glucose Level'
+    created_at: 'Created At'
+  report_generation:
+    req_fields: 'Please enter all the required fields'
 

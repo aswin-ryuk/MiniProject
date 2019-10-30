@@ -11,6 +11,8 @@ List of gems used in the application
 * Pagination         - Will paginate
 * UI design          - Bootstrap4, bootbox, Jquery
 * form               - Simple form
+* Api                - Httparty
+* Testing            - Rspec and FactoryGirl
 
 List of functionalities implemented in the aplication
 
@@ -33,6 +35,8 @@ List of functionalities implemented in the aplication
 * Model concerns.
 * Callbacks and Filters.
 * Mixin.
+* API with Httparty.
+* Automatic Testcase with rspec.
 
 # Hosted in Heroku
 

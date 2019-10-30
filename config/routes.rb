@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   resources :reports, except: [:show] do
 		collection do
+			get :requirements
 			get :destroy_record
 		end
   end
