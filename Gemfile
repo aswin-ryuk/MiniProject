@@ -1,13 +1,15 @@
-source 'https://rubygems.org'
-
 # git_source(:github) do |repo_name|
 #   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
 #   "https://github.com/#{repo_name}.git"
 # end
 
+source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+ruby '3.1.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.2'
+gem 'rails', '~> 6.1.7', '>= 6.1.7.1'
 gem 'nio4r', '~> 2.4'
 gem 'pg'
 # Use oracle as the database for Active Record
@@ -19,22 +21,23 @@ gem 'pg'
 #gem 'activerecord', '~> 5.0', '>= 5.2.3'
 #gem 'activesupport', '~> 5.2', '>= 5.2.3'
 # Use Puma as the app server
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '>= 6'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
+gem 'coffee-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem 'mini_racer', platforms: :ruby
+########gem 'mini_racer', platforms: :ruby
+gem 'mini_racer', '~> 0.6.2'
 gem 'execjs'
 
 gem 'bootstrap', '~> 4.0'
 
-gem 'simple_form', '~> 3.5'
+gem 'simple_form'
 gem 'country_select'
 
 gem 'pry'
@@ -80,8 +83,10 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'prawn', '~> 2.1'
+gem 'prawn', '~> 2.4'
 gem 'prawn-table', '~> 0.2.2'
 
 gem 'chartkick', '2.2.5'
 gem 'highcharts_rails'
+
+gem "matrix", "~> 0.4.2"
