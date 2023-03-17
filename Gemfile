@@ -32,8 +32,8 @@ gem 'coffee-rails'
 # gem 'therubyracer', platforms: :ruby
 
 ########gem 'mini_racer', platforms: :ruby
-gem 'mini_racer', '~> 0.6.2'
-gem 'execjs'
+#gem 'mini_racer', '~> 0.6.2'
+#gem 'execjs'
 
 gem 'bootstrap', '~> 4.0'
 
