@@ -3,15 +3,14 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: ec2-174-129-231-116.compute-1.amazonaws.com
+
   port: 5432
-  username: gnyvjrixnregyi
-  password: 78aa71e7dc26796fd8f3f9e75653b84e8ec545824b7f2d2bf96916b167d4e65c
+  username: postgres
+  password: admin
 
 development:
   <<: *default
-  database: dft50drr2cclfd
+  database: aswin
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -68,6 +67,7 @@ test:
 #
 production:
   <<: *default
-  # database: myapp_production
-  # username: myapp
-  # password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  database: render_aswin_production_db
+  username: aswin_ryuk_production
+  password: 

@@ -12,7 +12,7 @@
          OR
       </div>
       <div class="col-md-5">
-        <%= f.input :description, label: 'Description', input_html: {value: session[:filters_desc],class: ''} %>
+        <%= f.input :description, label: 'Description', input_html: {value: session[:filters_desc],class: 'desc-field'} %>
       </div>
       <div class="col-md-1 img-responsive">
         <%= link_to "#{image_tag('search.png', {alt: 'Refresh', align: 'middle', border: '0', size: "25x25", local_asset: false})}".html_safe, "javascript:void(0);" ,data: {url: courses_path, form: 'courses_search_form', toggle: "tooltip", title: "search"},class: 'js_custom_refresh'%>
