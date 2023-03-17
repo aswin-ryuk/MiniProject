@@ -1,18 +1,18 @@
 databases:
-  - name: postgres
+  - name: render_aswin_production_db
     databaseName: render_aswin_production_db
     user: aswin_ryuk_production
 
 services:
   - type: web
-    name: rails
+    name: mini-application
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec rails s"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: postgres
+          name: render_aswin_production_db
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
