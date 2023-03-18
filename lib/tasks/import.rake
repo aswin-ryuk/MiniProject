@@ -40,3 +40,5 @@ namespace :import do
     end
 
 end
+
+#To run the rake rake import:collections
