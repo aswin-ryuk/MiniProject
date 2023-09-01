@@ -1,3 +1,9 @@
+#Db will be deleted every 30 days.
+#create the new db in render site by clicking new button on home page.
+#update those details in the app setting page - copy db Internal Database URL to app environment(sub menu) DATABASE_URL
+#update the databases details in this file - name, databaseName and user.
+#upate database.yml production db details.
+
 databases:
   - name: render_aswin_production_db
     databaseName: render_aswin_production_db_o9ma

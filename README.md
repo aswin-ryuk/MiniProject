@@ -38,6 +38,6 @@ List of functionalities implemented in the aplication
 * API with Httparty.
 * Automatic Testcase with rspec.
 
-# Hosted in Heroku
+# Hosted in Render
 
-* Please use the link to preview the application -  https://ror-mini-application.herokuapp.com
+* Please use the link to preview the application -  https://mini-application.onrender.com
