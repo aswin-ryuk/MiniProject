@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
  
-  devise_for :users, controllers: { registrations: 'registrations'}, path_names: {sign_in: 'login', sign: 'logout'}
+  devise_for :users, controllers: { registrations: 'registrations', omniauth_callbacks: 'users/omniauth_callbacks' }, path_names: {sign_in: 'login', sign: 'logout'}
 
 	concern :export_csv do  	
   		get :export_csv, on: :collection 

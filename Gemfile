@@ -90,3 +90,6 @@ gem 'chartkick', '2.2.5'
 gem 'highcharts_rails'
 
 gem "matrix", "~> 0.4.2"
+
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'

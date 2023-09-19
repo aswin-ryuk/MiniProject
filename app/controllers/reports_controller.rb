@@ -25,7 +25,7 @@ class ReportsController < ApplicationController
     end
 
     def update
-        if @report.update_attributes(report_params)
+        if @report.update(report_params)
           flash[:notice] = t('common.updated',model_name: Report.model_name)
           redirect_to reports_path
         else

@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_user!
 
-  PER_PAGE = 20
+  PER_PAGE = 10
 
   include ExportCsv
 

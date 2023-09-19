@@ -48,7 +48,7 @@ load_and_authorize_resource
   end
 
   def update
-    if @course.update_attributes(course_params)
+    if @course.update(course_params)
       flash[:notice] = t('common.updated',model_name: Course.model_name)
       redirect_to courses_path
     else

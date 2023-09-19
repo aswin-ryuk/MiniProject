@@ -5,6 +5,7 @@ This application is developed using rails version 5.1 and ruby version 2.3.
 List of gems used in the application
 
 * Authentication     - Devise 
+* OmniAuth 			     - omniauth-google-oauth2
 * Authorization      - cancacan
 * chart              - highchart
 * Pdf generation     - Prawn, Prawn-table
