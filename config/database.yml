@@ -68,6 +68,6 @@ test:
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
-  database: render_aswin_production_db_o9ma
-  username: aswin_ryuk_production
+  database: render_aswin_production_db2
+  username: render_aswin_production_db2_user
   password: 
