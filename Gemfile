@@ -21,7 +21,7 @@ gem 'pg'
 #gem 'activerecord', '~> 5.0', '>= 5.2.3'
 #gem 'activesupport', '~> 5.2', '>= 5.2.3'
 # Use Puma as the app server
-gem 'puma', '~> 5.0'
+gem 'puma'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Use Uglifier as compressor for JavaScript assets
@@ -34,6 +34,8 @@ gem 'coffee-rails'
 ########gem 'mini_racer', platforms: :ruby
 #gem 'mini_racer', '~> 0.6.2'
 #gem 'execjs'
+
+gem 'logger'
 
 gem 'bootstrap', '~> 4.0'
 

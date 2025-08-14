@@ -11,6 +11,9 @@ default: &default
 development:
   <<: *default
   database: aswin
+  host: <%= ENV["DATABASE_HOST"] || "host.docker.internal" %>
+  username: <%= ENV["DATABASE_USERNAME"] || "postgres" %>
+  password: <%= ENV["DATABASE_PASSWORD"] || "admin" %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
