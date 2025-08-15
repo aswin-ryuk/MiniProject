@@ -8,9 +8,22 @@ default: &default
   username: postgres
   password: admin
 
+# development:
+#   <<: *default
+#   database: aswin
+
+#connect via terminal
+#psql -h aurora-cluster-name.xxxxxxxxxxxx.ap-south-1.rds.amazonaws.com -U your_rds_username -d your_database_name -p 5432
+
 development:
   <<: *default
+  host: <%= Rails.application.credentials.db[:host] %>
+  port: 5432
   database: aswin
+  username: <%= Rails.application.credentials.db[:username] %>
+  password: <%= Rails.application.credentials.db[:password] %>
+  pool: 5
+  sslmode: require
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -67,7 +80,10 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
-  database: render_aswin_production_db2
-  username: render_aswin_production_db2_user
-  password: 
+  host: <%= Rails.application.credentials.db[:host] %>
+  port: 5432
+  database: aswin
+  username: <%= Rails.application.credentials.db[:username] %>
+  password: <%= Rails.application.credentials.db[:password] %>
+  pool: 5
+  sslmode: require
