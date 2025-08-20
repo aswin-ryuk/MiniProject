@@ -83,7 +83,9 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
-
+  # config.force_ssl = true
+  # allow requests from your EC2 public IP
+  #config.hosts << "98.86.238.135"
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
